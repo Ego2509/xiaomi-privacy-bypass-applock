@@ -88,7 +88,7 @@ This guide explains how to **disable Xiaomi's Privacy Password** without a facto
    
 7. Try to set a negative wrong attempt num with SetEdit:
    - Just shizuku: `adb shell sh /sdcard/Android/data/moe.shizuku.privileged.api/start.sh`
-   - allow write permission to SetEdit `.\adb shell pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS`
+   - allow write permission to SetEdit `adb shell pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS`
    - Poke the `privacy_wrong_attempt_num` and put a negative value, say for example -10.
    - Repeat steps 5 and 6.
    - If `privacy_wrong_attempt_num` is `-9`, it means this bypass works, you can brute-force the lock pattern just by executing the script that uses ADB.
@@ -110,14 +110,14 @@ If SetEdit doesn't appear in Shizuku and the method didn't work, you can try man
    - Extract and open the folder.
 2. Connect your phone to the PC via USB or follow this guide https://www.xda-developers.com/install-adb-windows-macos-linux/.
 3. Open a command prompt in the platform-tools folder and enter:
-   ```sh
-   .\adb devices
+   ```bash
+   adb devices
    ```
    - If your device appears, proceed.
    - If it asks for permission on the phone, accept it.
 4. Enter the following command to grant SetEdit permissions:
-   ```sh
-   .\adb shell pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS
+   ```bash
+   adb shell pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS
    ```
 5. If successful, continue with the next steps 3 and 4 from Step-by-Step Guide. I personally did this step, but SetEdit still didn't appear in Shizuku. I continued anyway, and it still worked.
    
